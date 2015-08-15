@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/plantillas/template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <p:growl id="msgs" escape="true" life="3000" showDetail="true"/>
+            <ui:fragment>
+                <h1> No existe conversacion</h1>
+                <div>
+                    #{excepcionController.mensaje}
+                </div>
+                <p:link outcome="/index" value="Ir a inicio" style="font-weight: normal;"/>
+            </ui:fragment>            
+            <h:graphicImage class="ri" library="default" name="img/ecuasanitas.jpg" alt="Ecuasanitas Logo" width="90%" style="margin-left: 5%;"/>
+        </h:form>
+    </ui:define>
+</ui:composition>

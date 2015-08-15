@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+
+
+    <h:form id="login" rendered="#{not identity.loggedIn}">
+        
+        
+        <p:panel header ="Datos de ingreso" style="width: 30%; margin-left: 35%;">
+            <h:graphicImage 
+                class="ri" 
+                library="default" 
+                name="img/login.jpg" 
+                style="margin-bottom: 1em; margin-bottom: 1em;"/>
+            <div class="center" style="margin-bottom: 10px;">
+                <p:inputText id="username" 
+                             placeholder="Usuario" 
+                             value="#{loginCredentials.userId}" 
+                             required="true"
+                             styleClass="loginComponent"
+                             style="font-size: 1.25em;"/>
+            </div>
+            <div class="center">
+                <p:password id="password" 
+                            placeholder="Contraseña" 
+                            value="#{loginCredentials.password}" 
+                            required="true" 
+                            styleClass="loginComponent"
+                            style="font-size: 1.25em;"/>
+            </div>
+            <div class="center">
+                <h:commandButton id="submit" 
+                                 value="Ingresar" 
+                                 action="#{identity.login}" 
+                                 style="margin-top: 10px; padding:10px; font-size: 1.25em"/>
+            </div>
+        </p:panel>
+    </h:form>
+
+
+</ui:composition>
+

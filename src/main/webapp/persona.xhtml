@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"                    
+                xmlns:p="http://primefaces.org/ui"
+                template="/plantillas/template.xhtml">
+    <ui:define name="content">
+
+        <h:form id="form">
+            <p:panel id="panel" header="Persona">
+
+                <p:messages id="msgs" />
+
+                <h:panelGrid columns="3" cellpadding="5">
+                    <p:outputLabel for="ident" value="Identificacion:" />
+                    <p:inputText id="ident" value="#{personaController.persona.identificacion}" required="true" label="Identificación">
+                        <c:validateLength minimum="10"  maximum="10"/>
+                    </p:inputText>
+                    <p:message for="ident" display="icon" />
+
+                    <p:outputLabel for="firstname" value="Firstname:" />
+                    <p:inputText id="firstname" value="#{personaController.persona.nombre}" required="true" label="Firstname">
+
+                    </p:inputText>
+                    <p:message for="firstname" display="icon" />
+
+                    <p:outputLabel for="lastname" value="Lastname:" />
+                    <p:inputText id="lastname" value="#{personaController.persona.apellido}" label="Lastname" required="true">                      
+
+                    </p:inputText>
+
+                    <p:message for="lastname" id="msgLastname" display="icon" />
+
+                    <p:outputLabel for="fechaN" value="Fecha de Nacimiento:" />
+                    <p:calendar id="fechaN" value="#{personaController.persona.fechaNacimiento}" label="Fecha de Nacimiento" required="false" converter="#{localDateConverter}"
+                                >
+                    </p:calendar>
+                    <p:message for="fechaN" id="msgfechaN" display="icon" />
+
+                </h:panelGrid>                
+            </p:panel>
+            <p:panel id="panelDir" header="Dirección">                
+
+                <h:panelGrid columns="2" cellpadding="4">
+                    <p:outputLabel for="principal" value="Calle Principal:" />
+                    <p:inputText id="principal" value="#{personaController.persona.residencia.principal}" required="false" >                        
+                    </p:inputText>                    
+
+                    <p:outputLabel for="numero" value="Numero Casa:" />
+                    <p:inputText id="numero" value="#{personaController.persona.residencia.numero}" >
+
+                    </p:inputText>
+                    <p:outputLabel for="secudaria" value="Calle Secundaria:" />
+                    <p:inputText id="secudaria" value="#{personaController.persona.residencia.secundaria}" >
+
+                    </p:inputText>
+                    <p:outputLabel for="vecindario" value="Vecendario:" />
+                    <p:inputText id="vecindario" value="#{personaController.persona.residencia.vencindario}" >
+
+                    </p:inputText>
+                    <p:outputLabel for="ref" value="Referencia:" />
+                    <h:inputTextarea id="ref" value="#{personaController.persona.residencia.refenrencia}" 
+                                     style="width: 200px; height: 80px;">
+
+                    </h:inputTextarea>
+
+                </h:panelGrid>   
+                <p:commandButton value="Save" update="panel" actionListener="#{personaController.guardar()}" icon="ui-icon-check" />
+            </p:panel>
+            <br/>
+            <!--
+            <p:dataTable value="# {saludoController.paices}" 
+                         var="pais1"> 
+                <p:column headerText="CODIGO" sortBy="# {pais1.codigo}">                    
+
+                    <h:outputText value="# {pais1.codigo}" />
+                </p:column>
+                <p:column headerText="NOMBRE" sortBy="# {pais1.nombre}">                    
+                    <h:outputText value="# {pais1.nombre}" />
+
+                </p:column>
+            </p:dataTable>-->
+        </h:form>
+    </ui:define>
+</ui:composition>

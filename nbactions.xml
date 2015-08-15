@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Deploy</actionName>
+            <displayName>Deploy</displayName>
+            <goals>
+                <goal>wildfly:deploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Undeploy</actionName>
+            <displayName>Undeploy</displayName>
+            <goals>
+                <goal>wildfly:undeploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-wildfly deploy local</actionName>
+            <displayName>wildfly deploy local</displayName>
+            <goals>
+                <goal>wildfly:deploy</goal>
+            </goals>
+            <activatedProfiles>
+                <activatedProfile>wildfly-local</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>CUSTOM-deploy local</actionName>
+            <displayName>deploy local</displayName>
+            <goals>
+                <goal>wildfly:deploy</goal>
+                <goal>-P</goal>
+                <goal>wildfly-local</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-wildfly-deploy-remote</actionName>
+            <displayName>wildfly-deploy-remote</displayName>
+            <goals>
+                <goal>wildfly:deploy</goal>
+                <goal>-P</goal>
+                <goal>wildfly-remote</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-wildfly:redeploy</actionName>
+            <displayName>wildfly:redeploy</displayName>
+            <goals>
+                <goal>wildfly:redeploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-redeplo-local</actionName>
+            <displayName>redeplo-local</displayName>
+            <goals>
+                <goal>wildfly:redeploy</goal>
+                <goal>-P</goal>
+                <goal>wildfly-local</goal>
+            </goals>
+        </action>
+    </actions>
