@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+    <datasource 
+        jndi-name="testMysql"
+        enabled="true" 
+        use-java-context="true" pool-name="MysqlPool">
+		<connection-url>jdbc:mysql://localhost:3606/pft_db</connection-url>
+        	<driver>mysql-connector-java-5.1.33.jar</driver>
+        	<security>
+                      <user-name>usuario</user-name>
+                      <password>admin</password>
+        	</security>
+    </datasource>
+</datasources>
