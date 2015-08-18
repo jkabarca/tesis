@@ -3,7 +3,7 @@
   <persistence-unit name="servicioSOAPU" transaction-type="JTA">
     <description> Maneja el datos de proyectos. </description>
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <jta-data-source>java:/testMysql</jta-data-source>
+    <jta-data-source>java:jboss/testMysql</jta-data-source>
     <class>edu.utpl.gestion.modelo.security.Usuario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

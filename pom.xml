@@ -13,8 +13,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.picketlink.javaee.bom>2.7.0.CR1</version.picketlink.javaee.bom>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <hibernate.dialect>org.hibernate.dialect.MySQLDialect</hibernate.dialect>
         <swho.sql>true</swho.sql>
     </properties>
